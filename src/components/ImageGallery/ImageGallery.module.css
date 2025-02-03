@@ -1,0 +1,19 @@
+.imagesContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px 16px;
+  padding: 16px;
+  max-width: 1158px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.imageWrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 1112px;
+  height: 240px;
+  flex-basis: calc((100% - 16px * 3) / 4);
+}

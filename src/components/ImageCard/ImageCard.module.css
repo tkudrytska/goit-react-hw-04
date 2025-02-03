@@ -1,0 +1,11 @@
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.imageWrap {
+  display: flex;
+  height: 240px;
+}
