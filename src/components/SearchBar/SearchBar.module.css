@@ -18,3 +18,10 @@
     max-width: 1200px;
   }
 }
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+}
