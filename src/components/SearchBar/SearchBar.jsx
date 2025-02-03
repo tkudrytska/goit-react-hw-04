@@ -1,6 +1,6 @@
 import s from "./SearchBar.module.css";
 import { useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const SearchBar = ({onSubmit}) => {
     const [inputValue, setInputValue] = useState("");
@@ -28,7 +28,6 @@ const SearchBar = ({onSubmit}) => {
                     placeholder="Search images and photos"
                 />
                 <button type="submit">Search</button>
-                <Toaster />
             </form>
         </header>
 

@@ -7,6 +7,9 @@ import ImageModal from './ImageModal/ImageModal'
 import ErrorMessage from './ErrorMessage/ErrorMessage'
 import { fetchPhotos } from '../gallery-api'
 import Loader from './Loader/Loader'
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 function App() {
   const [images, setImages] = useState([]);
@@ -14,6 +17,8 @@ function App() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [viewImage, setViewImage] = useState({});
 
   useEffect(() => {
     if (!query) return;
@@ -40,14 +45,23 @@ function App() {
 
   const handlePage = () => setPage(prev => prev + 1);
 
+  const handleImageClick = (image) => {
+    setViewImage(image);
+    setIsOpen(true);
+};
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <>
       <SearchBar onSubmit={handleQuery} />
-      {images.length > 0 && <ImageGallery images={images} />}
+      {images.length > 0 && <ImageGallery images={images} onClick={handleImageClick} />}
       {loading && <Loader />}
       {error && <ErrorMessage />}
       {images.length > 0 && <LoadMoreBtn onClick={handlePage} />}
-      <ImageModal />
+      {modalIsOpen && <ImageModal item={viewImage} isOpen={modalIsOpen} isClose={closeModal} />}
     </>
   )
 }

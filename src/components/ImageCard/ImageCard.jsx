@@ -9,5 +9,3 @@ const ImageCard = ({image}) => {
 }
 
 export default ImageCard
-
-// { id, description, urls: { small, regular }, user: {name}, likes, alt_description }

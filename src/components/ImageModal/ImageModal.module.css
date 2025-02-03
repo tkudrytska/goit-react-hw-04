@@ -1,0 +1,30 @@
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.closeBtn {
+  display: block;
+  min-width: 24px;
+  height: 24px;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: gray;
+  cursor: pointer;
+  border: none;
+  margin-left: auto;
+  margin-bottom: 16px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: black;
+  background-color: transparent;
+}
